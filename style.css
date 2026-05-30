@@ -105,6 +105,7 @@ a {
 .header-logo img {
     height: 60px;
     filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+    transition: all 0.3s ease;
 }
 
 .header-right {
@@ -1051,9 +1052,13 @@ a {
 }
 .header-scrolled {
     background: rgba(18, 43, 75, 0.95) !important;
-    padding: 10px 5% !important;
+    padding: 5px 5% !important;
 }
 .header-scrolled .header-logo img {
     filter: brightness(0) invert(1);
+    height: 40px !important;
+}
+.header-scrolled .nav-item-mega {
+    padding: 10px 0 !important;
 }
 
