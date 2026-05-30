@@ -1162,10 +1162,10 @@ h1, h2, h3, h4, h5, h6 {
 /* 7. Card Watermarks */
 .watermark {
     position: absolute;
-    bottom: -20px;
-    right: -20px;
-    font-size: 130px;
-    color: rgba(13, 113, 176, 0.05); /* very faint primary navy/blue */
+    top: -5px;
+    right: -10px;
+    font-size: 70px;
+    color: rgba(13, 113, 176, 0.12);
     z-index: 0;
     transform: rotate(-15deg);
     pointer-events: none;
