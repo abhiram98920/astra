@@ -355,7 +355,7 @@ a {
 
 /* COMMON SECTION STYLES */
 .section-padding {
-    padding: 100px 5%;
+    padding: 50px 5%;
 }
 
 .section-title {
@@ -938,7 +938,7 @@ a {
 
 /* SPECIALIST SERVICES SECTION (FORMERLY COE) */
 .coe-section {
-    padding: 80px 0;
+    padding: 50px 0;
     position: relative;
     overflow: hidden;
 }
