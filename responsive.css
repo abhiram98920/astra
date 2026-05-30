@@ -1013,7 +1013,6 @@ table {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 40px;
-        align-items: start;
     }
     .appointment-section .contact-form form {
         display: grid;
