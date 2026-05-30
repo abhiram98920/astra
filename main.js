@@ -2,17 +2,38 @@
    ASTRA HEALTH — main.js
    ============================================= */
 
-/* ---- REVEAL ON SCROLL ---- */
-const revealEls = document.querySelectorAll('.reveal');
-const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-            setTimeout(() => e.target.classList.add('active'), i * 90);
-            revealObs.unobserve(e.target);
-        }
-    });
-}, { threshold: 0.10 });
-revealEls.forEach(el => revealObs.observe(el));
+/* ---- REVEAL ON SCROLL (Apple-style) ---- */
+(function() {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+        return;
+    }
+    const els = document.querySelectorAll('.reveal');
+    if (!els.length) return;
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('active');
+                obs.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(el => obs.observe(el));
+})();
+
+/* ---- PARALLAX HERO (subtle) ---- */
+(function() {
+    const hero = document.querySelector('.hero-section');
+    if (!hero || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const img = hero.querySelector('.hero-bg img');
+    if (!img) return;
+    window.addEventListener('scroll', () => {
+        const st = window.pageYOffset;
+        const max = 40;
+        const y = Math.min(st * 0.12, max);
+        img.style.transform = `translateY(${y}px) scale(1.02)`;
+    }, { passive: true });
+})();
 
 /* ---- SCROLL TO TOP ---- */
 const scrollBtn = document.getElementById('scroll-to-top');
