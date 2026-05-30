@@ -1436,8 +1436,8 @@ table {
     gap: 40px;
 }
 .appointment-section .contact-form form {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 15px;
 }
 .appointment-section .form-group select,
