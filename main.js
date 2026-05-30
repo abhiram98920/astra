@@ -48,7 +48,6 @@ const heroSlides = [
 let hIdx = 0;
 const heroImg   = document.querySelector('.hero-bg img');
 const heroTitle = document.getElementById('heroTitle');
-const heroDesc  = document.getElementById('heroDesc');
 const heroPage  = document.querySelector('.hero-pagination');
 
 function changeHeroSlide(dir) {
@@ -59,7 +58,6 @@ function applyHeroSlide() {
     // Start exit animations
     if (heroImg) heroImg.classList.add('hero-img-anim-exit');
     if (heroTitle) heroTitle.classList.add('hero-content-anim-exit');
-    if (heroDesc) heroDesc.classList.add('hero-content-anim-exit');
 
     setTimeout(() => {
         // Change content
@@ -77,13 +75,6 @@ function applyHeroSlide() {
             void heroTitle.offsetWidth;
             heroTitle.classList.add('hero-content-anim');
         }
-        if (heroDesc) {
-            heroDesc.textContent = heroSlides[hIdx].desc.replace(/&amp;/g,'&');
-            heroDesc.classList.remove('hero-content-anim-exit');
-            heroDesc.classList.remove('hero-content-anim');
-            void heroDesc.offsetWidth;
-            heroDesc.classList.add('hero-content-anim');
-        }
         if (heroPage)  heroPage.innerHTML = `0${hIdx + 1}<span>/0${heroBgs.length}</span>`;
     }, 400);
 }
@@ -91,7 +82,6 @@ function applyHeroSlide() {
 // Initial entrance animation
 if (heroImg) heroImg.classList.add('hero-img-anim');
 if (heroTitle) heroTitle.classList.add('hero-content-anim');
-if (heroDesc) heroDesc.classList.add('hero-content-anim');
 
 // Auto-cycle every 5s
 setInterval(() => changeHeroSlide(1), 5000);
