@@ -1200,17 +1200,18 @@ h1, h2, h3, h4, h5, h6 {
 .new-footer {
     background: #041624;
     color: #fff;
-    padding-top: 90px;
+    padding-top: 20px;
     position: relative;
     font-family: 'Outfit', sans-serif;
-    margin-top: -45px;
+    margin-top: -60px;
 }
 
 /* CTA OVERLAP BAND */
 .footer-cta-band {
+    background-color: #0A4DA2;
     position: relative;
     z-index: 5;
-    padding: 0 5%;
+    padding: 0 5% 60px;
 }
 
 .footer-cta-container {
@@ -1300,6 +1301,7 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px 5% 50px;
+    border-top: 1px solid rgba(255,255,255,0.15);
 }
 
 .footer-logo {
