@@ -721,9 +721,9 @@ a {
 
 /* PARTNERS */
 .partners-section {
-    background: #0A4DA2;
+    background-color: #0A4DA2 !important;
     text-align: center;
-    padding-bottom: 100px;
+    padding-bottom: 120px;
 }
 .partners-section .section-title {
     color: #fff !important;
@@ -1208,10 +1208,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-cta-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: -75px auto 40px;
     position: relative;
-    transform: translateY(-50%);
-    margin-bottom: -30px; /* Adjust spacing below the visually shifted CTA */
     background: linear-gradient(90deg, #3fa7f2, #2481c9);
     border-radius: 15px;
     padding: 25px 40px;
@@ -1294,7 +1292,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 5% 50px;
+    padding: 20px 5% 50px;
 }
 
 .footer-logo {
@@ -1416,9 +1414,7 @@ h1, h2, h3, h4, h5, h6 {
         flex-direction: column;
         gap: 30px;
         text-align: center;
-        margin: 0 5%;
-        transform: translateY(-50%);
-        margin-bottom: -100px;
+        margin: -100px 5% 40px;
     }
     .footer-cta-left .cta-btn {
         align-self: center;
