@@ -1200,24 +1200,17 @@ h1, h2, h3, h4, h5, h6 {
 .new-footer {
     background: #041624;
     color: #fff;
-    padding-top: 20px;
+    padding-top: 0;
     position: relative;
     font-family: 'Outfit', sans-serif;
-    margin-top: -60px;
-}
-
-/* CTA OVERLAP BAND */
-.footer-cta-band {
-    background-color: #0A4DA2;
-    position: relative;
-    z-index: 5;
-    padding: 0 5% 60px;
+    margin-top: -50px;
 }
 
 .footer-cta-container {
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
+    z-index: 10;
     background: linear-gradient(90deg, #3fa7f2, #2481c9);
     border-radius: 15px;
     padding: 25px 40px;
@@ -1225,7 +1218,13 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-    z-index: 10;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.footer-divider {
+    border-top: 1px solid rgba(255,255,255,0.15);
+    margin: 40px 5% 0;
 }
 
 .footer-cta-left {
@@ -1300,8 +1299,7 @@ h1, h2, h3, h4, h5, h6 {
     gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 5% 50px;
-    border-top: 1px solid rgba(255,255,255,0.15);
+    padding: 40px 5% 50px;
 }
 
 .footer-logo {
