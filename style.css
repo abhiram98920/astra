@@ -723,7 +723,7 @@ a {
 .partners-section {
     background-color: #0A4DA2 !important;
     text-align: center;
-    padding-bottom: 120px;
+    padding-bottom: 80px;
 }
 .partners-section .section-title {
     color: #fff !important;
@@ -1200,7 +1200,7 @@ h1, h2, h3, h4, h5, h6 {
 .new-footer {
     background: #041624;
     color: #fff;
-    padding-top: 0;
+    padding-top: 80px;
     position: relative;
     font-family: 'Outfit', sans-serif;
     margin-top: 0;
@@ -1208,8 +1208,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-cta-container {
     max-width: 1200px;
-    margin: -75px auto 40px;
+    margin: -80px auto 40px;
     position: relative;
+    z-index: 10;
     background: linear-gradient(90deg, #3fa7f2, #2481c9);
     border-radius: 15px;
     padding: 25px 40px;
@@ -1414,7 +1415,7 @@ h1, h2, h3, h4, h5, h6 {
         flex-direction: column;
         gap: 30px;
         text-align: center;
-        margin: -100px 5% 40px;
+        margin: -80px 5% 40px;
     }
     .footer-cta-left .cta-btn {
         align-self: center;
