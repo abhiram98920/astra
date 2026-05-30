@@ -651,6 +651,7 @@ a {
     background: #E3F2FD;
     border-radius: 20px;
     position: relative;
+    overflow: hidden;
     padding-top: 40px;
     padding-bottom: 25px;
     text-align: center;
@@ -662,6 +663,8 @@ a {
 .expert-img-wrapper {
     height: 280px;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
 }
 .expert-img-wrapper img {
     height: 100%;
@@ -676,6 +679,7 @@ a {
     border-radius: 15px;
     text-align: left;
     position: relative;
+    z-index: 1;
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 .expert-name {
@@ -1166,6 +1170,16 @@ h1, h2, h3, h4, h5, h6 {
     right: -10px;
     font-size: 70px;
     color: rgba(13, 113, 176, 0.12);
+    z-index: 0;
+    transform: rotate(-15deg);
+    pointer-events: none;
+}
+.expert-watermark {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 200px;
+    color: rgba(13, 113, 176, 0.05); /* very faint matching blue */
     z-index: 0;
     transform: rotate(-15deg);
     pointer-events: none;
