@@ -1087,7 +1087,7 @@ a {
 
 /* 1. Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
 }
 ::-webkit-scrollbar-track {
     background: #f1f5f9;
