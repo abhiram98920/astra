@@ -1200,17 +1200,23 @@ h1, h2, h3, h4, h5, h6 {
 .new-footer {
     background: #041624;
     color: #fff;
-    padding-top: 80px;
+    padding-top: 90px;
     position: relative;
     font-family: 'Outfit', sans-serif;
-    margin-top: 0;
+    margin-top: -45px;
+}
+
+/* CTA OVERLAP BAND */
+.footer-cta-band {
+    position: relative;
+    z-index: 5;
+    padding: 0 5%;
 }
 
 .footer-cta-container {
     max-width: 1200px;
-    margin: -80px auto 40px;
+    margin: 0 auto;
     position: relative;
-    z-index: 10;
     background: linear-gradient(90deg, #3fa7f2, #2481c9);
     border-radius: 15px;
     padding: 25px 40px;
