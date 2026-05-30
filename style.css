@@ -1077,3 +1077,85 @@ a {
 .header-scrolled .nav-item-mega {
     padding: 10px 0 !important;
 }
+/* ===============================
+   PREMIUM UI ENHANCEMENTS
+   =============================== */
+
+/* 1. Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+    background: #0D71B0;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #122B4B;
+}
+
+/* 2. Typography Polish */
+p {
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+}
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.5px;
+}
+
+/* 3. Pulsing Button Animation */
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(13, 113, 176, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(13, 113, 176, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(13, 113, 176, 0); }
+}
+.btn-appointment {
+    animation: pulse-glow 2s infinite;
+}
+
+/* 4. Enhanced Micro-Interactions */
+.coe-card {
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s;
+}
+.coe-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(18, 43, 75, 0.12);
+}
+.expert-card {
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s;
+}
+.expert-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(18, 43, 75, 0.12);
+}
+
+/* 5. Reveal Animations Upgrade */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal.slide-left {
+    transform: translateX(-40px);
+}
+.reveal.slide-right {
+    transform: translateX(40px);
+}
+.reveal.slide-left.active, .reveal.slide-right.active {
+    transform: translateX(0);
+}
+
+/* 6. Glassmorphism Badges */
+.blue-pill {
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
