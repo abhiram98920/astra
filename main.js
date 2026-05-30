@@ -56,11 +56,43 @@ function changeHeroSlide(dir) {
     applyHeroSlide();
 }
 function applyHeroSlide() {
-    if (heroImg) heroImg.src = heroBgs[hIdx];
-    if (heroTitle) heroTitle.innerHTML = heroSlides[hIdx].title;
-    if (heroDesc)  heroDesc.textContent = heroSlides[hIdx].desc.replace(/&amp;/g,'&');
-    if (heroPage)  heroPage.innerHTML = `0${hIdx + 1}<span>/0${heroBgs.length}</span>`;
+    // Start exit animations
+    if (heroImg) heroImg.classList.add('hero-img-anim-exit');
+    if (heroTitle) heroTitle.classList.add('hero-content-anim-exit');
+    if (heroDesc) heroDesc.classList.add('hero-content-anim-exit');
+
+    setTimeout(() => {
+        // Change content
+        if (heroImg) {
+            heroImg.src = heroBgs[hIdx];
+            heroImg.classList.remove('hero-img-anim-exit');
+            heroImg.classList.remove('hero-img-anim');
+            void heroImg.offsetWidth; // trigger reflow
+            heroImg.classList.add('hero-img-anim');
+        }
+        if (heroTitle) {
+            heroTitle.innerHTML = heroSlides[hIdx].title;
+            heroTitle.classList.remove('hero-content-anim-exit');
+            heroTitle.classList.remove('hero-content-anim');
+            void heroTitle.offsetWidth;
+            heroTitle.classList.add('hero-content-anim');
+        }
+        if (heroDesc) {
+            heroDesc.textContent = heroSlides[hIdx].desc.replace(/&amp;/g,'&');
+            heroDesc.classList.remove('hero-content-anim-exit');
+            heroDesc.classList.remove('hero-content-anim');
+            void heroDesc.offsetWidth;
+            heroDesc.classList.add('hero-content-anim');
+        }
+        if (heroPage)  heroPage.innerHTML = `0${hIdx + 1}<span>/0${heroBgs.length}</span>`;
+    }, 400);
 }
+
+// Initial entrance animation
+if (heroImg) heroImg.classList.add('hero-img-anim');
+if (heroTitle) heroTitle.classList.add('hero-content-anim');
+if (heroDesc) heroDesc.classList.add('hero-content-anim');
+
 // Auto-cycle every 5s
 setInterval(() => changeHeroSlide(1), 5000);
 
