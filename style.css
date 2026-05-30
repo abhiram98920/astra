@@ -1200,7 +1200,7 @@ h1, h2, h3, h4, h5, h6 {
 .new-footer {
     background: #041624;
     color: #fff;
-    padding-top: 0;
+    padding-top: 80px;
     position: relative;
     font-family: 'Outfit', sans-serif;
     margin-top: 0;
@@ -1208,8 +1208,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-cta-container {
     max-width: 1140px;
-    margin: -60px auto 0;
-    position: relative;
+    width: 90%;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 10;
     background: linear-gradient(90deg, #3fa7f2, #2481c9);
     border-radius: 15px;
@@ -1222,7 +1226,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .footer-divider {
     border-top: 1px solid rgba(255,255,255,0.15);
-    margin: 40px 5% 0;
+    margin: 0 5% 0;
 }
 
 .footer-cta-left {
@@ -1419,7 +1423,7 @@ h1, h2, h3, h4, h5, h6 {
         flex-direction: column;
         gap: 30px;
         text-align: center;
-        margin: -80px 5% 0;
+        margin: 0;
     }
     .footer-cta-left .cta-btn {
         align-self: center;
