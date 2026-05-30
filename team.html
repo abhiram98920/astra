@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Team - Astra Health</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -15,6 +16,9 @@
                     <img src="content doc/images/logo.avif" alt="Astra Health">
                 </a>
             </div>
+            <!-- Mobile Menu Toggle -->
+            <div class="hamburger-menu" id="mobile-menu-btn" style="display:none;"><i class="fas fa-bars"></i></div>
+
             
             <div class="header-right">
                 <!-- TOP CONTACTS -->
@@ -180,7 +184,66 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="main-footer">
+    
+    <!-- FAQ SECTION -->
+    <section class="faq-section" style="background-color:#0A4DA2; color: #fff; padding: 80px 0 20px;">
+        <div class="container" style="max-width: 900px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <p style="font-size: 14px; font-weight: 300; margin-bottom: 5px;">Frequently Asked Questions</p>
+                <h2 class="section-title" style="font-size: 36px; font-weight: 600; margin: 0; color: #fff;">Need To Know?</h2>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">What services does Astra Health offer? <span class="faq-icon"><i class="fas fa-plus"></i></span></button>
+                    <div class="faq-answer">
+                        <p>We offer a comprehensive range of services including Physiotherapy, MSK Assessment, Joint Injections, Acupuncture, Women's Health, and Private GP services.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How do I book an appointment? <span class="faq-icon"><i class="fas fa-plus"></i></span></button>
+                    <div class="faq-answer">
+                        <p>You can book an appointment online through our website, or by calling our appointment line at 01233 631 555.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What should I bring to my appointment? <span class="faq-icon"><i class="fas fa-plus"></i></span></button>
+                    <div class="faq-answer">
+                        <p>Please bring any relevant medical records, a list of current medications, and wear comfortable clothing if you are attending a physiotherapy session.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What are the visiting hours at Astra Health? <span class="faq-icon"><i class="fas fa-plus"></i></span></button>
+                    <div class="faq-answer">
+                        <p>Our clinics are generally open from 8:00 AM to 6:00 PM on weekdays. For specific department timings, please check our services page or contact us.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Does Astra Health offer home healthcare services? <span class="faq-icon"><i class="fas fa-plus"></i></span></button>
+                    <div class="faq-answer">
+                        <p>Yes, we do offer specialized home visits for patients who are unable to travel. Please contact us directly to arrange a home consultation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARTNERS -->
+    <section class="section-padding partners-section" style="background-color:#0A4DA2; padding-bottom:120px;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <h2 class="section-title" style="margin-bottom: 10px; font-size: 32px; color: #fff;">Professional Partners</h2>
+            <div class="partners-grid">
+                <span class="partner-logo">WPA</span>
+                <span class="partner-logo">PruHealth</span>
+                <span class="partner-logo">Cigna</span>
+                <span class="partner-logo">AVIVA</span>
+                <span class="partner-logo">Simplyhealth</span>
+                <span class="partner-logo">NHS</span>
+            </div>
+        </div>
+    </section>
+
+<footer class="main-footer">
         <div class="footer-top">
             <div class="ft-logo">
                 <img src="content doc/images/logo.avif" alt="Logo">
@@ -208,7 +271,7 @@
             <div class="footer-links">
                 <h4>Contact Us</h4>
                 <ul>
-                    <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 11 Repton Avenue, Ashford, Kent</li>
+                    <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 11 Repton Avenue, Ashford, Kent, TN23 3RX</li>
                     <li><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> 01233 631 555</li>
                     <li><i class="fas fa-envelope" style="margin-right: 10px;"></i> admin@astrahealth.uk</li>
                 </ul>

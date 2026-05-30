@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 – Page Not Found | Astra Health</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -49,17 +50,20 @@
         <nav class="nav-bar">
             <div class="container">
                 <a href="index.html" class="logo"><img src="content doc/images/logo.avif" alt="Astra Health Logo"></a>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="team.html">Our Team</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+                <div class="nav-inner" id="navInner">
+                    <ul class="nav-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="team.html">Our Team</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    <a href="contact.html" class="nav-cta">APPOINTMENT <i class="fas fa-calendar-check"></i></a>
+                </div>
                 <div class="header-action">
                     <a href="contact.html" class="btn btn-primary"><span class="btn-text">APPOINTMENT <i class="fas fa-calendar-check"></i></span></a>
                 </div>
-                <div class="mobile-menu-btn"><i class="fas fa-bars"></i></div>
+                <button class="mobile-btn" id="mobileBtn" aria-label="Open menu"><i class="fas fa-bars"></i></button>
             </div>
         </nav>
     </header>

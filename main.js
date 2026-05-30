@@ -21,19 +21,6 @@ if (scrollBtn) {
     scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
-/* ---- MOBILE MENU ---- */
-const mBtn = document.getElementById('mobileBtn');
-const nav  = document.getElementById('navInner');
-if (mBtn && nav) {
-    mBtn.addEventListener('click', () => {
-        const isOpen = nav.style.display === 'flex';
-        nav.style.cssText = isOpen
-            ? ''
-            : 'display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:var(--navy2);padding:20px 28px;gap:12px;z-index:999;';
-        mBtn.innerHTML = isOpen ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
-    });
-}
-
 /* ---- HERO BG CYCLING ---- */
 const heroBgs = [
     "content doc/images/hero.png",
@@ -55,17 +42,15 @@ function changeHeroSlide(dir) {
     applyHeroSlide();
 }
 function applyHeroSlide() {
-    // Start exit animations
     if (heroImg) heroImg.classList.add('hero-img-anim-exit');
     if (heroTitle) heroTitle.classList.add('hero-content-anim-exit');
 
     setTimeout(() => {
-        // Change content
         if (heroImg) {
             heroImg.src = heroBgs[hIdx];
             heroImg.classList.remove('hero-img-anim-exit');
             heroImg.classList.remove('hero-img-anim');
-            void heroImg.offsetWidth; // trigger reflow
+            void heroImg.offsetWidth;
             heroImg.classList.add('hero-img-anim');
         }
         if (heroTitle) {
@@ -79,11 +64,8 @@ function applyHeroSlide() {
     }, 400);
 }
 
-// Initial entrance animation
 if (heroImg) heroImg.classList.add('hero-img-anim');
 if (heroTitle) heroTitle.classList.add('hero-content-anim');
-
-// Auto-cycle every 5s
 setInterval(() => changeHeroSlide(1), 5000);
 
 /* ---- FAQ ACCORDION ---- */
@@ -147,22 +129,147 @@ let lastScrollTop = 0;
 window.addEventListener('scroll', () => {
     if (!header) return;
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    // Add glassmorphism when scrolled down
+
     if (scrollTop > 50) {
         header.classList.add('header-scrolled');
     } else {
         header.classList.remove('header-scrolled');
     }
 
-    // Hide/show logic
     if (scrollTop > lastScrollTop && scrollTop > 150) {
-        // Scrolling down
         header.classList.add('header-hidden');
     } else {
-        // Scrolling up
         header.classList.remove('header-hidden');
     }
-    
+
     lastScrollTop = scrollTop;
+});
+
+/* ---- MOBILE MENU OVERLAY ---- */
+const overlay = document.createElement('div');
+overlay.className = 'mobile-overlay';
+overlay.style.cssText = 'display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:999;opacity:0;transition:opacity 0.35s ease;';
+document.body.appendChild(overlay);
+
+function showOverlay(show) {
+    overlay.style.display = show ? 'block' : 'none';
+    setTimeout(() => { overlay.style.opacity = show ? '1' : '0'; }, 10);
+    if (!show) {
+        setTimeout(() => { if (overlay.style.opacity === '0') overlay.style.display = 'none'; }, 350);
+    }
+}
+
+overlay.addEventListener('click', closeAllMobileMenus);
+
+/* ---- MOBILE MENU SYSTEM ---- */
+function closeAllMobileMenus() {
+    document.querySelectorAll('.main-nav-links.active, .nav-inner.active, .nav-links.active').forEach(el => {
+        el.classList.remove('active');
+    });
+    document.querySelectorAll('.hamburger-menu i, .mobile-btn i, .mobile-menu-btn i').forEach(icon => {
+        icon.className = icon.className.replace('fa-times', 'fa-bars');
+    });
+    document.body.classList.remove('menu-open');
+    showOverlay(false);
+}
+
+function toggleMobileMenu(btn, menu) {
+    if (!btn || !menu) return;
+    const isOpen = menu.classList.contains('active');
+    menu.classList.toggle('active');
+    const icon = btn.querySelector('i');
+    if (icon) {
+        icon.className = isOpen ? (icon.className.replace('fa-times', 'fa-bars')) : (icon.className.replace('fa-bars', 'fa-times'));
+    }
+    document.body.classList.toggle('menu-open', !isOpen);
+    showOverlay(!isOpen);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // System 1: #mobile-menu-btn + .main-nav-links (index, about, services, team, contact)
+    const mainBtn = document.getElementById('mobile-menu-btn');
+    const mainNav = document.querySelector('.main-nav-links');
+    if (mainBtn && mainNav) {
+        mainBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMobileMenu(mainBtn, mainNav);
+        });
+    }
+
+    // System 2: #mobileBtn + #navInner (service-details)
+    const srvBtn = document.getElementById('mobileBtn');
+    const srvNav = document.getElementById('navInner');
+    if (srvBtn && srvNav) {
+        srvBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMobileMenu(srvBtn, srvNav);
+        });
+    }
+
+    // System 3: (legacy) .mobile-menu-btn (privacy, terms, 404 - now use system 2)
+
+    // Close menu when clicking a link (all systems)
+    document.querySelectorAll('.main-nav-links a, .nav-inner a, .nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            closeAllMobileMenus();
+        });
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.main-nav-links, .nav-inner, .nav-links, .hamburger-menu, .mobile-btn, .mobile-menu-btn')) {
+            closeAllMobileMenus();
+        }
+    });
+
+    // Toggle mega menus on mobile (System 1: .nav-item-mega)
+    document.querySelectorAll('.nav-item-mega > a').forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024) {
+                e.preventDefault();
+                toggle.parentElement.classList.toggle('open');
+            }
+        });
+    });
+
+    // Toggle mega menu on mobile (System 2: .has-mega for service-details)
+    document.querySelectorAll('.has-mega > a').forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 1024) {
+                e.preventDefault();
+                toggle.parentElement.classList.toggle('open');
+            }
+        });
+    });
+});
+
+// FAQ Accordion
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const faqItem = button.parentElement;
+            const isActive = faqItem.classList.contains('active');
+
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-answer').style.maxHeight = null;
+                const icon = item.querySelector('.faq-icon i');
+                if(icon) {
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                }
+            });
+
+            if (!isActive) {
+                faqItem.classList.add('active');
+                const answer = faqItem.querySelector('.faq-answer');
+                answer.style.maxHeight = answer.scrollHeight + "px";
+                const icon = button.querySelector('.faq-icon i');
+                if(icon) {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                }
+            }
+        });
+    });
 });
