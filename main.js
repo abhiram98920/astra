@@ -222,25 +222,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Toggle mega menus on mobile (System 1: .nav-item-mega)
-    document.querySelectorAll('.nav-item-mega > a').forEach(toggle => {
-        toggle.addEventListener('click', (e) => {
-            if (window.innerWidth <= 1024) {
-                e.preventDefault();
-                toggle.parentElement.classList.toggle('open');
-            }
-        });
-    });
-
-    // Toggle mega menu on mobile (System 2: .has-mega for service-details)
-    document.querySelectorAll('.has-mega > a').forEach(toggle => {
-        toggle.addEventListener('click', (e) => {
-            if (window.innerWidth <= 1024) {
-                e.preventDefault();
-                toggle.parentElement.classList.toggle('open');
-            }
-        });
-    });
+    // Bottom tab: hide when footer is visible
+    const sideWidgets = document.querySelector('.side-widgets');
+    const footerEl = document.querySelector('.new-footer') || document.querySelector('footer');
+    if (sideWidgets && footerEl) {
+        const footerObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                sideWidgets.classList.toggle('hidden', entry.isIntersecting);
+            });
+        }, { threshold: 0.05 });
+        footerObs.observe(footerEl);
+    }
 });
 
 // FAQ Accordion
