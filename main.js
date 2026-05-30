@@ -23,9 +23,9 @@ if (scrollBtn) {
 
 /* ---- HERO BG CYCLING ---- */
 const heroBgs = [
-    "content doc/images/hero.png",
-    "content doc/images/hero2.png",
-    "content doc/images/hero3.png"
+    "content doc/images/pexels-pavel-danilyuk-7653316.jpg",
+    "content doc/images/pexels-yankrukov-8612918.jpg",
+    "content doc/images/pexels-pavel-danilyuk-5998450.jpg"
 ];
 const heroSlides = [
     { title: "Your #1 Healthcare<br><span class=\"hero-highlight\">Partners in Kent.</span>", desc: "Defining the gold standard in physical healthcare and patient-centric clinical excellence in Ashford, Kent." },
