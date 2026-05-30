@@ -1461,6 +1461,28 @@ table {
     border-color: #A9DDFB;
     background: rgba(255,255,255,0.15);
 }
+/* White card form focus states */
+.appointment-section .contact-grid form input:focus,
+.appointment-section .contact-grid form select:focus,
+.appointment-section .contact-grid form textarea:focus {
+    outline: none;
+    border-color: var(--primary) !important;
+    background: #fff !important;
+    box-shadow: 0 0 0 3px rgba(13,113,176,0.1);
+}
+
+.appointment-section .contact-grid form button[type="submit"]:hover {
+    background: var(--secondary) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13,113,176,0.3);
+}
+
+/* CTA link hover */
+.appointment-section .contact-grid a[style*="border-radius:12px"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1) !important;
+}
+
 .appointment-section .hours-box {
     padding: 25px;
     border-radius: 12px;

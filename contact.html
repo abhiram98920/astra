@@ -122,24 +122,23 @@
     <!-- CONTACT FORM -->
     <section class="appointment-section" style="padding: 80px 5%;">
         <div class="container" style="max-width: 1200px; margin: 0 auto;">
-            <div style="text-align: center; margin-bottom: 50px;">
-                <h2 style="font-size: 36px; color: #fff; margin-bottom: 10px;">Send Us a Message</h2>
-                <p style="color: rgba(255,255,255,0.7); font-size: 16px;">We'll get back to you within 24 hours</p>
-            </div>
             <div class="contact-grid">
-                <div class="contact-form reveal">
-                    <form action="#">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+                <!-- Left: White Form Card -->
+                <div class="reveal" style="background:#fff; border-radius:16px; padding:40px; box-shadow:0 8px 30px rgba(0,0,0,0.08);">
+                    <h2 style="font-size:28px; color:var(--secondary); margin-bottom:6px;">Send Us a Message</h2>
+                    <p style="color:#888; font-size:15px; margin-bottom:28px;">We'll get back to you within 24 hours.</p>
+                    <form action="#" style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+                        <div style="grid-column:span 2;">
+                            <input type="text" placeholder="Your Name" required style="width:100%; padding:13px 16px; border:1px solid #e0e0e0; border-radius:8px; font-size:14px; font-family:inherit; background:#fafafa; color:#333; transition:0.2s;">
                         </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                        <div>
+                            <input type="email" placeholder="Email Address" required style="width:100%; padding:13px 16px; border:1px solid #e0e0e0; border-radius:8px; font-size:14px; font-family:inherit; background:#fafafa; color:#333; transition:0.2s;">
                         </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="Phone Number" required>
+                        <div>
+                            <input type="tel" placeholder="Phone Number" required style="width:100%; padding:13px 16px; border:1px solid #e0e0e0; border-radius:8px; font-size:14px; font-family:inherit; background:#fafafa; color:#333; transition:0.2s;">
                         </div>
-                        <div class="form-group">
-                            <select required>
+                        <div style="grid-column:span 2;">
+                            <select required style="width:100%; padding:13px 16px; border:1px solid #e0e0e0; border-radius:8px; font-size:14px; font-family:inherit; background:#fafafa; color:#555; transition:0.2s;">
                                 <option value="" disabled selected>Select A Service</option>
                                 <option value="msk">MSK Assessment</option>
                                 <option value="physio">Physiotherapy</option>
@@ -148,30 +147,29 @@
                                 <option value="other">Other</option>
                             </select>
                         </div>
-                        <div class="form-group" style="grid-column: span 2;">
-                            <textarea placeholder="Your Message" rows="4" style="width:100%; padding:14px 16px; border-radius:8px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.1); color:#fff; font-size:14px; font-family:inherit; resize:vertical;"></textarea>
+                        <div style="grid-column:span 2;">
+                            <textarea placeholder="Your Message" rows="4" style="width:100%; padding:13px 16px; border:1px solid #e0e0e0; border-radius:8px; font-size:14px; font-family:inherit; background:#fafafa; color:#333; resize:vertical; transition:0.2s;"></textarea>
                         </div>
-                        <div style="grid-column: span 2;">
-                            <button type="submit" class="btn btn-primary" style="width: 100%; background: var(--secondary);" data-text="SEND MESSAGE"><span class="btn-text">SEND MESSAGE</span></button>
+                        <div style="grid-column:span 2;">
+                            <button type="submit" style="width:100%; padding:14px 28px; border:none; border-radius:30px; background:var(--primary); color:#fff; font-size:15px; font-weight:600; font-family:inherit; cursor:pointer; transition:0.3s; letter-spacing:0.5px;">SEND MESSAGE</button>
                         </div>
                     </form>
                 </div>
-                <div class="reveal" style="display:flex; flex-direction:column; justify-content:center; gap:30px;">
-                    <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:30px; text-align:center;">
-                        <i class="fas fa-phone-alt" style="font-size:32px; color:var(--primary); margin-bottom:15px;"></i>
-                        <h4 style="color:#fff; margin-bottom:8px;">Call Us</h4>
-                        <p style="color:rgba(255,255,255,0.8);">01233 631 555</p>
-                    </div>
-                    <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:30px; text-align:center;">
-                        <i class="fas fa-envelope" style="font-size:32px; color:var(--primary); margin-bottom:15px;"></i>
-                        <h4 style="color:#fff; margin-bottom:8px;">Email Us</h4>
-                        <p style="color:rgba(255,255,255,0.8);">admin@astrahealth.uk</p>
-                    </div>
-                    <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:30px; text-align:center;">
-                        <i class="fas fa-map-marker-alt" style="font-size:32px; color:var(--primary); margin-bottom:15px;"></i>
-                        <h4 style="color:#fff; margin-bottom:8px;">Visit Us</h4>
-                        <p style="color:rgba(255,255,255,0.8);">11 Repton Avenue, Ashford, Kent</p>
-                    </div>
+
+                <!-- Right: Compact CTA links -->
+                <div class="reveal" style="display:flex; flex-direction:column; gap:16px;">
+                    <a href="tel:01233631555" style="display:flex; align-items:center; gap:14px; background:#fff; border-radius:12px; padding:18px 22px; text-decoration:none; color:var(--secondary); box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:0.3s;">
+                        <div style="width:44px; height:44px; border-radius:50%; background:var(--primary); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><i class="fas fa-phone-alt" style="color:#fff; font-size:18px;"></i></div>
+                        <div><strong style="display:block; font-size:15px;">Call Us</strong><span style="font-size:13px; color:#888;">01233 631 555</span></div>
+                    </a>
+                    <a href="mailto:admin@astrahealth.uk" style="display:flex; align-items:center; gap:14px; background:#fff; border-radius:12px; padding:18px 22px; text-decoration:none; color:var(--secondary); box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:0.3s;">
+                        <div style="width:44px; height:44px; border-radius:50%; background:var(--primary); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><i class="fas fa-envelope" style="color:#fff; font-size:18px;"></i></div>
+                        <div><strong style="display:block; font-size:15px;">Email Us</strong><span style="font-size:13px; color:#888;">admin@astrahealth.uk</span></div>
+                    </a>
+                    <a href="https://maps.google.com/?q=11+Repton+Avenue+Ashford+Kent+TN23+3RX" target="_blank" style="display:flex; align-items:center; gap:14px; background:#fff; border-radius:12px; padding:18px 22px; text-decoration:none; color:var(--secondary); box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:0.3s;">
+                        <div style="width:44px; height:44px; border-radius:50%; background:var(--primary); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><i class="fas fa-map-marker-alt" style="color:#fff; font-size:18px;"></i></div>
+                        <div><strong style="display:block; font-size:15px;">Visit Us</strong><span style="font-size:13px; color:#888;">11 Repton Avenue, Ashford, Kent</span></div>
+                    </a>
                 </div>
             </div>
         </div>
