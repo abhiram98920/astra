@@ -1196,15 +1196,18 @@ h1, h2, h3, h4, h5, h6 {
 .new-footer {
     background: #041624;
     color: #fff;
-    padding-top: 50px;
+    padding-top: 0;
     position: relative;
     font-family: 'Outfit', sans-serif;
-    margin-top: 50px;
+    margin-top: 0;
 }
 
 .footer-cta-container {
     max-width: 1200px;
-    margin: 0 auto 50px;
+    margin: 0 auto;
+    position: relative;
+    transform: translateY(-50%);
+    margin-bottom: -30px; /* Adjust spacing below the visually shifted CTA */
     background: linear-gradient(90deg, #3fa7f2, #2481c9);
     border-radius: 15px;
     padding: 25px 40px;
@@ -1212,6 +1215,7 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    z-index: 10;
 }
 
 .footer-cta-left {
@@ -1408,7 +1412,9 @@ h1, h2, h3, h4, h5, h6 {
         flex-direction: column;
         gap: 30px;
         text-align: center;
-        margin: 0 5% 50px;
+        margin: 0 5%;
+        transform: translateY(-50%);
+        margin-bottom: -100px;
     }
     .footer-cta-left .cta-btn {
         align-self: center;
