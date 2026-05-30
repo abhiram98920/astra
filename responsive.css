@@ -1432,6 +1432,7 @@ table {
 }
 .appointment-section .contact-grid {
     display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
 }
 .appointment-section .contact-form form {
