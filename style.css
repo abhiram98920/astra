@@ -248,19 +248,19 @@ a {
 
 .hero-bottom-left h1 {
     font-family: 'Inter', sans-serif;
-    font-size: 64px;
+    font-size: 60px;
     font-weight: 600;
     color: #fff;
-    max-width: 60%;
+    max-width: 100%;
+    white-space: nowrap;
     line-height: 1.1;
     text-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    text-transform: capitalize; /* Camel Case / Title Case */
+    text-transform: capitalize;
 }
 .hero-highlight {
     background: linear-gradient(90deg, #A9DDFB 0%, #ffffff 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: inline-block;
 }
 
 .hero-bottom-right {
