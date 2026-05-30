@@ -41,9 +41,9 @@ const heroBgs = [
     "content doc/images/hero3.png"
 ];
 const heroSlides = [
-    { title: "Your #1 Healthcare<br>Partners in Kent.", desc: "Defining the gold standard in physical healthcare and patient-centric clinical excellence in Ashford, Kent." },
-    { title: "Advanced Physiotherapy<br>Specialists.", desc: "Expert MSK assessments and specialist treatments for a faster, safer recovery journey." },
-    { title: "Women's Health<br>&amp; Wellbeing.", desc: "Expert women's health treatments and pelvic health clinical strategy tailored for you." }
+    { title: "Your #1 Healthcare<br><span class=\"hero-highlight\">Partners in Kent.</span>", desc: "Defining the gold standard in physical healthcare and patient-centric clinical excellence in Ashford, Kent." },
+    { title: "Advanced Physiotherapy<br><span class=\"hero-highlight\">Specialists.</span>", desc: "Expert MSK assessments and specialist treatments for a faster, safer recovery journey." },
+    { title: "Women's Health<br><span class=\"hero-highlight\">&amp; Wellbeing.</span>", desc: "Expert women's health treatments and pelvic health clinical strategy tailored for you." }
 ];
 let hIdx = 0;
 const heroImg   = document.querySelector('.hero-bg img');

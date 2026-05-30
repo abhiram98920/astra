@@ -256,6 +256,12 @@ a {
     text-shadow: 0 4px 20px rgba(0,0,0,0.2);
     text-transform: capitalize; /* Camel Case / Title Case */
 }
+.hero-highlight {
+    background: linear-gradient(90deg, #A9DDFB 0%, #ffffff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
 
 .hero-bottom-right {
     position: absolute;
