@@ -1,0 +1,755 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+
+/* Fallback for Neue Montreal */
+@font-face {
+    font-family: 'Neue Montreal';
+    src: local('Inter'), local('Arial');
+}
+
+:root {
+    --primary: #F3A712; /* Golden Yellow from Logo Rings */
+    --primary-dark: #122B4B; /* Navy Blue from Logo Text */
+    --brand-grad: linear-gradient(90deg, #FFB833 0%, #F3A712 100%);
+    --bg-light: #F4F7F9;
+    --card-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    --hover-shadow: 0 20px 40px rgba(18, 43, 75, 0.15); /* Tinted shadow to navy */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Libre Franklin', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    background: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HERO SECTION - FULL WIDTH/HEIGHT */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    background: #FFFFFF;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* GRADIENTS OVERLAY */
+.hero-gradient {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(13, 113, 176, 0.8) 0%, rgba(13, 113, 176, 0) 40%),
+                linear-gradient(0deg, rgba(13, 113, 176, 0.6) 0%, rgba(13, 113, 176, 0) 30%);
+    pointer-events: none;
+}
+
+/* ABSOLUTE NAVIGATION */
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 40px 5% 0 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.header-logo {
+    flex-shrink: 0;
+}
+
+.header-logo img {
+    height: 60px;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+}
+
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.top-contacts {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    gap: 30px;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 300;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 15px;
+}
+
+.top-contacts a {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.top-contacts .lang-switch {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 4px 12px;
+    gap: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.main-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.main-nav-links a.nav-link {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 5px;
+    white-space: nowrap;
+}
+
+.main-nav-links a.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: #A9DDFB;
+    transition: 0.3s;
+}
+.main-nav-links a.nav-link:hover::after {
+    width: 100%;
+}
+
+.btn-appointment {
+    background: var(--brand-grad);
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(243, 167, 18, 0.4);
+    transition: 0.3s;
+    white-space: nowrap;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-appointment:hover {
+    box-shadow: 0 6px 20px rgba(243, 167, 18, 0.6);
+    transform: translateY(-2px);
+}
+
+/* HERO BOTTOM TEXT */
+.hero-bottom-left {
+    position: absolute;
+    bottom: 60px;
+    left: 5%;
+    z-index: 5;
+}
+
+.hero-bottom-left h2 {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 24px;
+    color: #A9DDFB;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.hero-bottom-left h1 {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 64px;
+    font-weight: 500;
+    color: #fff;
+    max-width: 900px;
+    line-height: 1.1;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.hero-bottom-right {
+    position: absolute;
+    bottom: 60px;
+    right: 5%;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.patient-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 40px;
+    padding: 10px 20px 10px 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #fff;
+}
+
+.patient-avatars {
+    display: flex;
+}
+.patient-avatars img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin-left: -15px;
+}
+.patient-avatars img:first-child {
+    margin-left: 0;
+}
+
+.patient-card-text h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+.patient-card-text p {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.hero-pagination {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 56px;
+    color: #A9DDFB;
+    font-weight: 500;
+    display: flex;
+    align-items: baseline;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.hero-pagination span {
+    font-size: 32px;
+    opacity: 0.8;
+}
+
+/* FLOATING SIDE SOCIALS */
+.floating-socials {
+    position: fixed;
+    right: 30px;
+    bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 100;
+}
+
+.floating-socials a {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+.floating-socials a:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+.f-phone { background: #007BFF; }
+.f-email { background: #55ACEE; }
+.f-insta { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+
+/* COMMON SECTION STYLES */
+.section-padding {
+    padding: 100px 5%;
+}
+
+.section-title {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 48px;
+    color: var(--primary);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.section-title.dark {
+    color: var(--primary-dark);
+}
+
+.section-desc {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.8;
+}
+
+.divider {
+    width: 80px;
+    height: 3px;
+    background: var(--brand-grad);
+    margin: 30px 0;
+    border-radius: 3px;
+}
+
+/* SERVICES ROW LAYOUT (HORIZONTAL) */
+.services-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+}
+
+.services-header-box {
+    flex: 0 0 280px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-right: 40px;
+    z-index: 1;
+}
+.services-header-box h2 {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 32px;
+    color: var(--primary-dark);
+    line-height: 1.2;
+    z-index: 2;
+    position: relative;
+}
+.stethoscope-bg {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 100px;
+    color: #4AC4E2;
+    opacity: 0.2;
+    z-index: 0;
+}
+.sh-divider {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80px;
+    width: 1px;
+    background: #e0e0e0;
+}
+
+.services-cards-wrapper {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+}
+
+.s-card {
+    flex: 1;
+    background: #E3F2FD;
+    border-radius: 12px;
+    padding: 25px 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.s-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.s-card-icon {
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 24px;
+    flex-shrink: 0;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.s-card-text {
+    margin-left: 15px;
+    z-index: 2;
+}
+
+.s-card-text h3 {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    letter-spacing: 0.5px;
+}
+
+.s-card-watermark {
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 100px;
+    color: var(--primary-dark);
+    opacity: 0.05;
+    z-index: 1;
+}
+
+/* PILLARS / WHAT WE DO */
+.pillars-section {
+    background: var(--bg-light);
+}
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 50px;
+}
+.pillar-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: var(--card-shadow);
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+.pillar-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--hover-shadow);
+    border-color: rgba(13, 113, 176, 0.2);
+}
+.pillar-card img {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--bg-light);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.pillar-card h3 {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 26px;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+/* PHILOSOPHY SECTION (NEW LAYOUT) */
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+}
+.philosophy-bullets {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 20px;
+}
+.p-bullet {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+.p-bullet-icon {
+    width: 35px;
+    height: 35px;
+    background: #E3F2FD;
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+.p-bullet-text {
+    font-size: 14px;
+    color: var(--primary-dark);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.philosophy-image-container {
+    position: relative;
+}
+.philosophy-img-main {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    height: 550px;
+}
+.floating-badge-square {
+    position: absolute;
+    bottom: -20px;
+    left: -30px;
+    background: var(--primary-dark);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(18, 43, 75, 0.2);
+}
+.floating-badge-square h3 {
+    font-size: 38px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.floating-badge-square span {
+    font-size: 12px;
+    color: rgba(255,255,255,0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.floating-badge-pill {
+    position: absolute;
+    background: #fff;
+    padding: 10px 20px 10px 10px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+.pill-1 {
+    bottom: 150px;
+    right: -40px;
+}
+.pill-2 {
+    bottom: 40px;
+    right: -20px;
+}
+.pill-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.pill-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.pill-text h4 {
+    font-size: 14px;
+    color: var(--primary-dark);
+    margin: 0;
+    font-weight: 600;
+}
+.pill-text p {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+}
+
+/* TEAM SECTION (NEW LAYOUT) */
+.team-cards-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.expert-card {
+    background: #E3F2FD;
+    border-radius: 20px;
+    position: relative;
+    padding-top: 40px;
+    padding-bottom: 25px;
+    text-align: center;
+    transition: 0.3s;
+}
+.expert-card:hover {
+    transform: translateY(-10px);
+}
+.expert-img-wrapper {
+    height: 280px;
+    margin-bottom: 20px;
+}
+.expert-img-wrapper img {
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    mix-blend-mode: multiply;
+}
+.expert-info-box {
+    background: #fff;
+    margin: 0 20px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+.expert-name {
+    color: var(--primary-dark);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.expert-specialty {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+.expert-creds {
+    color: #888;
+    font-size: 12px;
+}
+.expert-btn {
+    position: absolute;
+    bottom: -18px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: var(--primary-dark);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.expert-btn:hover {
+    background: var(--primary);
+    color: #fff;
+}    font-size: 14px;
+}
+
+/* PARTNERS */
+.partners-section {
+    background: #fff;
+    text-align: center;
+}
+.partners-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 50px;
+}
+.partner-logo {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 28px;
+    color: #bbb;
+    font-weight: 500;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.partner-logo:hover {
+    color: var(--primary);
+    transform: scale(1.1);
+}
+
+/* FOOTER */
+.main-footer {
+    background: var(--primary-dark);
+    padding: 80px 5% 20px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.ft-logo img {
+    height: 60px;
+    filter: brightness(0) invert(1);
+    margin-bottom: 25px;
+}
+
+.footer-links h4 {
+    font-family: 'Neue Montreal', sans-serif;
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: #A9DDFB;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 15px;
+}
+
+.footer-links ul li a {
+    color: rgba(255,255,255,0.8);
+    transition: 0.3s;
+    display: inline-block;
+}
+.footer-links ul li a:hover {
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.footer-copy {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 25px;
+    opacity: 0.6;
+    font-size: 15px;
+    position: relative;
+    z-index: 2;
+}

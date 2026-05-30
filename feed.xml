@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Astra Health – Physiotherapy Clinic</title>
+    <link>https://astrahealth.uk</link>
+    <description>Clinical excellence in physiotherapy, MSK assessment, women's health, and specialist treatments in Ashford, Kent.</description>
+    <language>en-gb</language>
+    <copyright>Copyright 2026, Astra Health</copyright>
+    <lastBuildDate>Wed, 07 May 2026 12:00:00 +0000</lastBuildDate>
+    <atom:link href="https://astrahealth.uk/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>What is Shockwave Therapy?</title>
+      <link>https://astrahealth.uk/service-details.html</link>
+      <description>Shockwave therapy is a non-invasive treatment using high-intensity sound waves to stimulate tissue healing and reduce chronic musculoskeletal pain.</description>
+      <pubDate>Mon, 01 May 2026 08:00:00 +0000</pubDate>
+      <guid>https://astrahealth.uk/service-details.html</guid>
+    </item>
+    <item>
+      <title>Understanding MSK Physiotherapy</title>
+      <link>https://astrahealth.uk/services.html</link>
+      <description>Musculoskeletal (MSK) physiotherapy focuses on treating pain and dysfunction in muscles, joints, ligaments, and nerves. Learn how our specialists can help.</description>
+      <pubDate>Mon, 15 Apr 2026 08:00:00 +0000</pubDate>
+      <guid>https://astrahealth.uk/services.html#msk</guid>
+    </item>
+    <item>
+      <title>Women's Health Physiotherapy at Astra Health</title>
+      <link>https://astrahealth.uk/services.html</link>
+      <description>Our specialist women's health physiotherapy services address pelvic floor dysfunction, pregnancy-related conditions, and post-natal recovery.</description>
+      <pubDate>Mon, 01 Apr 2026 08:00:00 +0000</pubDate>
+      <guid>https://astrahealth.uk/services.html#womens</guid>
+    </item>
+    <item>
+      <title>Meet Our Expert Clinical Team</title>
+      <link>https://astrahealth.uk/team.html</link>
+      <description>Our award-winning clinical team brings years of specialist experience in physiotherapy, MSK assessment, and women's health treatment.</description>
+      <pubDate>Mon, 15 Mar 2026 08:00:00 +0000</pubDate>
+      <guid>https://astrahealth.uk/team.html</guid>
+    </item>
+  </channel>
+</rss>
