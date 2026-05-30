@@ -1159,3 +1159,22 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid rgba(255, 255, 255, 0.5);
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
+/* 7. Card Watermarks */
+.watermark {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 130px;
+    color: rgba(13, 113, 176, 0.05); /* very faint primary navy/blue */
+    z-index: 0;
+    transform: rotate(-15deg);
+    pointer-events: none;
+}
+.coe-card {
+    position: relative;
+    overflow: hidden;
+}
+.coe-card > *:not(.watermark) {
+    position: relative;
+    z-index: 1; /* keep content above watermark */
+}
