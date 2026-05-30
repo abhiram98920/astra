@@ -1,15 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 /* Fallback for Neue Montreal */
 @font-face {
-    font-family: 'Neue Montreal';
+    font-family: 'Outfit';
     src: local('Inter'), local('Arial');
 }
 
 :root {
-    --primary: #F3A712; /* Golden Yellow from Logo Rings */
-    --primary-dark: #122B4B; /* Navy Blue from Logo Text */
-    --brand-grad: linear-gradient(90deg, #FFB833 0%, #F3A712 100%);
+    --primary: #111111; /* Changed from Golden Yellow to Black */
+    --primary-dark: #122B4B; /* Navy Blue */
+    --brand-grad: linear-gradient(90deg, #333333 0%, #000000 100%);
     --bg-light: #F4F7F9;
     --card-shadow: 0 10px 30px rgba(0,0,0,0.05);
     --hover-shadow: 0 20px 40px rgba(18, 43, 75, 0.15); /* Tinted shadow to navy */
@@ -22,7 +22,7 @@
 }
 
 body {
-    font-family: 'Libre Franklin', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #333;
     overflow-x: hidden;
     background: #fff;
@@ -63,22 +63,39 @@ a {
     height: 100%;
     top: 0;
     left: 0;
-    background: linear-gradient(180deg, rgba(13, 113, 176, 0.8) 0%, rgba(13, 113, 176, 0) 40%),
-                linear-gradient(0deg, rgba(13, 113, 176, 0.6) 0%, rgba(13, 113, 176, 0) 30%);
+    background: 
+        linear-gradient(45deg, rgba(18, 43, 75, 0.9) 0%, rgba(18, 43, 75, 0.3) 50%, transparent 70%),
+        linear-gradient(180deg, rgba(13, 113, 176, 0.6) 0%, rgba(13, 113, 176, 0) 40%),
+        linear-gradient(0deg, rgba(13, 113, 176, 0.5) 0%, rgba(13, 113, 176, 0) 30%);
     pointer-events: none;
 }
 
-/* ABSOLUTE NAVIGATION */
-.main-header {
-    position: absolute;
+/* ABSOLUTE / FIXED NAVIGATION */
+.main-header, .header {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
-    padding: 40px 5% 0 5%;
+    z-index: 1000;
+    padding: 30px 5%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), background 0.4s, backdrop-filter 0.4s, padding 0.4s, box-shadow 0.4s;
+    background: transparent;
+}
+
+.header-scrolled {
+    background: rgba(18, 43, 75, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 15px 5% !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.header-hidden {
+    transform: translateY(-100%);
 }
 
 .header-logo {
@@ -160,23 +177,45 @@ a {
 }
 
 .btn-appointment {
-    background: var(--brand-grad);
+    position: relative;
+    overflow: hidden;
+    background: #0D71B0 !important; /* Premium medical blue */
     color: #fff;
-    padding: 10px 22px;
+    padding: 12px 28px;
     border-radius: 30px;
     font-size: 14px;
     font-weight: 500;
-    box-shadow: 0 4px 15px rgba(243, 167, 18, 0.4);
+    box-shadow: 0 4px 15px rgba(13, 113, 176, 0.3);
     transition: 0.3s;
     white-space: nowrap;
     display: inline-block;
     border: none;
     cursor: pointer;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.btn-appointment::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: var(--primary-dark); /* Navy blue fill */
+    transition: 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    z-index: -1;
+    border-radius: 30px;
+}
+
+.btn-appointment:hover::before {
+    width: 100%;
 }
 
 .btn-appointment:hover {
-    box-shadow: 0 6px 20px rgba(243, 167, 18, 0.6);
-    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(18, 43, 75, 0.4);
+    transform: none; /* No lifting */
+    color: #fff;
 }
 
 /* HERO BOTTOM TEXT */
@@ -188,21 +227,23 @@ a {
 }
 
 .hero-bottom-left h2 {
-    font-family: 'Neue Montreal', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 24px;
+    font-weight: 400;
     color: #A9DDFB;
     margin-bottom: 10px;
     text-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .hero-bottom-left h1 {
-    font-family: 'Neue Montreal', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 64px;
-    font-weight: 500;
+    font-weight: 600;
     color: #fff;
-    max-width: 900px;
+    max-width: 60%;
     line-height: 1.1;
     text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    text-transform: capitalize; /* Camel Case / Title Case */
 }
 
 .hero-bottom-right {
@@ -252,7 +293,7 @@ a {
 }
 
 .hero-pagination {
-    font-family: 'Neue Montreal', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 56px;
     color: #A9DDFB;
     font-weight: 500;
@@ -301,7 +342,7 @@ a {
 }
 
 .section-title {
-    font-family: 'Neue Montreal', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 48px;
     color: var(--primary);
     font-weight: 500;
@@ -343,7 +384,7 @@ a {
     z-index: 1;
 }
 .services-header-box h2 {
-    font-family: 'Neue Montreal', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 32px;
     color: var(--primary-dark);
     line-height: 1.2;
@@ -414,7 +455,7 @@ a {
 }
 
 .s-card-text h3 {
-    font-family: 'Neue Montreal', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 15px;
     font-weight: 600;
     color: var(--primary-dark);
@@ -466,7 +507,7 @@ a {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 .pillar-card h3 {
-    font-family: 'Neue Montreal', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 26px;
     color: var(--primary-dark);
     margin-bottom: 15px;
@@ -671,7 +712,7 @@ a {
     margin-top: 50px;
 }
 .partner-logo {
-    font-family: 'Neue Montreal', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 28px;
     color: #bbb;
     font-weight: 500;
@@ -720,7 +761,7 @@ a {
 }
 
 .footer-links h4 {
-    font-family: 'Neue Montreal', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 22px;
     margin-bottom: 25px;
     color: #A9DDFB;
@@ -753,3 +794,266 @@ a {
     position: relative;
     z-index: 2;
 }
+
+/* MEGA MENU CSS */
+.nav-item-mega {
+    position: relative;
+    padding: 20px 0;
+}
+.nav-item-mega > a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: rgba(18, 43, 75, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    width: max-content;
+    padding: 35px;
+    display: flex;
+    gap: 30px;
+    z-index: 1000;
+}
+.nav-item-mega:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+.mega-menu a {
+    color: #fff;
+    text-decoration: none;
+}
+/* Doctors Mega Menu */
+.mega-doc-card {
+    width: 220px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 15px;
+    transition: 0.3s;
+    color: #fff;
+}
+.mega-doc-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.mega-doc-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.mega-doc-card h4 {
+    margin: 0 0 5px 0;
+    font-size: 18px;
+    font-weight: 600;
+}
+.mega-doc-card p {
+    margin: 0;
+    font-size: 13px;
+    color: #A9DDFB;
+}
+/* Services Mega Menu */
+.mega-srv-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 750px;
+}
+.mega-srv-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 15px;
+    border-radius: 12px;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.mega-srv-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.mega-srv-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.mega-srv-item span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* SECTION WATERMARKS */
+.section-watermark {
+    position: absolute;
+    font-size: 250px;
+    color: rgba(18, 43, 75, 0.03);
+    z-index: 0;
+    pointer-events: none;
+}
+.wm-left { left: -50px; top: 10%; }
+.wm-right { right: -50px; bottom: 10%; }
+.wm-center { left: 50%; top: 50%; transform: translate(-50%, -50%); }
+
+/* Adjustments for buttons */
+.btn-appointment i {
+    margin-right: 8px;
+}
+
+/* SPECIALIST SERVICES SECTION (FORMERLY COE) */
+.coe-section {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+.coe-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1300px !important;
+    padding: 0 5%;
+}
+.coe-text-box {
+    flex: 0 0 35%;
+}
+.coe-title {
+    font-size: 42px;
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+.coe-desc {
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+.coe-pagination {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 600;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+.coe-pagination .active {
+    color: var(--primary-dark);
+}
+.coe-line {
+    width: 60px;
+    height: 2px;
+    background: #ccc;
+}
+
+.coe-grid-wrapper {
+    flex: 1;
+    overflow-x: visible;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+/* Hide scrollbar for grid */
+.coe-grid-wrapper::-webkit-scrollbar {
+    display: none;
+}
+.coe-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 170px);
+    gap: 25px;
+    align-items: start;
+    width: max-content;
+}
+.coe-card {
+    background: linear-gradient(180deg, #e4f2fb 0%, #f4f9fc 100%);
+    border-radius: 20px;
+    padding: 10px;
+    border: 2px solid #fff;
+    box-shadow: 0 8px 25px rgba(18, 43, 75, 0.05);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 155px;
+}
+/* Staggering the cards */
+.coe-card:nth-child(4n+1) { margin-top: 0px; }
+.coe-card:nth-child(4n+2) { margin-top: 40px; }
+.coe-card:nth-child(4n+3) { margin-top: -20px; }
+.coe-card:nth-child(4n+4) { margin-top: 20px; }
+
+.coe-card-top {
+    background: transparent;
+    padding: 5px 5px 15px 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-dark);
+    font-weight: 500;
+    font-size: 13px;
+}
+.coe-card-top i {
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0D71B0;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.coe-card img {
+    width: 100%;
+    flex: 1;
+    object-fit: cover;
+    border-radius: 12px;
+}
+.blue-pill {
+    position: absolute;
+    bottom: -10px;
+    right: 20px;
+    width: 40px;
+    height: 12px;
+    background: linear-gradient(90deg, #A9DDFB, #4CA1AF);
+    border-radius: 10px;
+}
+.dot-pill {
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    width: 12px;
+    height: 12px;
+    background: #122B4B;
+    border-radius: 50%;
+}
+
+/* FIX STICKY HEADER */
+.header-scrolled .top-contacts {
+    display: none !important;
+}
+.header-scrolled {
+    background: rgba(18, 43, 75, 0.95) !important;
+    padding: 10px 5% !important;
+}
+.header-scrolled .header-logo img {
+    filter: brightness(0) invert(1);
+}
+

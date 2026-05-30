@@ -39,20 +39,72 @@
 
                 <!-- MAIN NAV -->
                 <nav class="main-nav-links">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="about.html" class="nav-link">About</a>
-                    <a href="team.html" class="nav-link">Doctors <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 3px;"></i></a>
-                    <a href="services.html" class="nav-link">Departments <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 3px;"></i></a>
-                    <a href="contact.html" class="nav-link">Contact</a>
-                    <a href="contact.html" class="btn-appointment">Book Appointment</a>
-                </nav>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                
+                <!-- Services Mega Menu -->
+                <div class="nav-item-mega">
+                    <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-srv-grid">
+                            <a href="services.html" class="mega-srv-item">
+                                <img src="content doc/images/hero2.png" alt="MSK">
+                                <span>MSK Assessment</span>
+                            </a>
+                            <a href="services.html" class="mega-srv-item">
+                                <img src="content doc/images/pillar-experienced.png" alt="Joint">
+                                <span>Joint Injections</span>
+                            </a>
+                            <a href="services.html" class="mega-srv-item">
+                                <img src="content doc/images/service_shockwave_1778168510104.png" alt="Shockwave">
+                                <span>Shockwave Therapy</span>
+                            </a>
+                            <a href="services.html" class="mega-srv-item">
+                                <img src="content doc/images/service_acupuncture.png" alt="Acupuncture">
+                                <span>Acupuncture</span>
+                            </a>
+                            <a href="services.html" class="mega-srv-item">
+                                <img src="content doc/images/service_manual_therapy.png" alt="Manual">
+                                <span>Manual Therapy</span>
+                            </a>
+                            <a href="services.html" class="mega-srv-item">
+                                <img src="content doc/images/pillar-caring.png" alt="Urogynecology">
+                                <span>Urogynecology</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctors Mega Menu -->
+                <div class="nav-item-mega">
+                    <a href="team.html" class="nav-link">Doctors <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-doc-card">
+                            <img src="content doc/images/team-sumin.avif" alt="Sumin Moses">
+                            <h4>Sumin Moses</h4>
+                            <p>Specialist MSK Physio</p>
+                        </div>
+                        <div class="mega-doc-card">
+                            <img src="content doc/images/team-ruth.avif" onerror="this.src='content doc/images/pillar-friendly.png'" alt="Ruth Jayakaran">
+                            <h4>Ruth Jayakaran</h4>
+                            <p>Director & Senior Physio</p>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: center; padding: 0 20px;">
+                            <a href="team.html" class="btn-appointment" style="background: var(--primary);"><i class="fas fa-user-md"></i> View All Doctors</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="contact.html" class="btn-appointment"><i class="fas fa-calendar-plus"></i> Book Appointment</a>
+            </nav>
             </div>
         </header>
 
         <!-- BOTTOM LEFT TEXT -->
         <div class="hero-bottom-left">
-            <h2>Astra Health is a healthcare clinic located in the heart of Kent.</h2>
-            <h1>YOUR #1 HEALTHCARE PARTNERS.</h1>
+            <h2 id="heroDesc">Astra Health is a healthcare clinic located in the heart of Kent.</h2>
+            <h1 id="heroTitle">your #1 healthcare partners.</h1>
         </div>
 
         <!-- BOTTOM RIGHT PAGINATION & CARD -->
@@ -126,37 +178,103 @@
         </div>
     </section>
 
-    <!-- THE PILLARS OF ASTRA -->
-    <section class="section-padding pillars-section">
-        <div class="container" style="max-width: 1200px; margin: 0 auto;">
-            <div style="text-align: center;">
-                <h2 class="section-title">Our Commitment</h2>
-                <p class="section-desc">The Pillars of Astra Health</p>
-                <div class="divider" style="margin: 20px auto 50px;"></div>
+    <!-- CENTRE OF EXCELLENCE / SERVICES -->
+    <section class="section-padding coe-section" style="background: #F4F9FC; overflow: hidden; position: relative;">
+        <div class="container coe-container">
+            <!-- Left Side Content -->
+            <div class="coe-text-box">
+                <h2 class="coe-title">Our Specialist<br>Services</h2>
+                <p class="coe-desc">
+                    Astra Health is a premier healthcare facility dedicated to providing world-class medical care and specialist physiotherapy. Our commitment to patient well-being is reflected in our personalized approach, easy accessibility to senior medical staff, and continuous updates to our facilities and equipment.
+                </p>
+
+                <a href="services.html" class="btn-appointment" style="margin-top: 30px; display: inline-block;">View All Services</a>
             </div>
-            <div class="pillars-grid">
-                <div class="pillar-card">
-                    <img src="content doc/images/hero3.png" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80'" alt="Experienced">
-                    <h3>Experienced</h3>
-                    <p style="color: #666; line-height: 1.6;">With over two decades of experience, we have collectively helped and treated hundreds of happy patients.</p>
-                </div>
-                <div class="pillar-card">
-                    <img src="content doc/images/pillar-friendly.png" onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80'" alt="Friendly">
-                    <h3>Friendly</h3>
-                    <p style="color: #666; line-height: 1.6;">We are a warm team of physiotherapists and experts dedicated to your health and wellbeing.</p>
-                </div>
-                <div class="pillar-card">
-                    <img src="content doc/images/hero2.png" onerror="this.src='https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80'" alt="Caring">
-                    <h3>Caring</h3>
-                    <p style="color: #666; line-height: 1.6;">Our number one priority is for our patients to leave our clinic feeling cared for. You're in the right hands.</p>
+
+            <!-- Right Side Grid -->
+            <div class="coe-grid-wrapper">
+                <div class="coe-grid">
+                    
+                    <!-- 1 -->
+                    <div class="coe-card card-tall">
+                        <div class="coe-card-top">
+                            <i class="fas fa-bone"></i> <span>MSK Assessment</span>
+                        </div>
+                        <img src="content doc/images/hero2.png" alt="MSK" onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80'">
+                        <div class="blue-pill"></div>
+                    </div>
+
+                    <!-- 2 -->
+                    <div class="coe-card card-short">
+                        <div class="coe-card-top">
+                            <i class="fas fa-syringe"></i> <span>Joint Injections</span>
+                        </div>
+                        <img src="content doc/images/pillar-experienced.png" alt="Injections" onerror="this.src='https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80'">
+                        <div class="dot-pill"></div>
+                    </div>
+
+                    <!-- 3 -->
+                    <div class="coe-card card-medium">
+                        <div class="coe-card-top">
+                            <i class="fas fa-bolt"></i> <span>Shockwave</span>
+                        </div>
+                        <img src="content doc/images/pillar-friendly.png" alt="Shockwave" onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80'">
+                    </div>
+
+                    <!-- 4 -->
+                    <div class="coe-card card-medium">
+                        <div class="coe-card-top">
+                            <i class="fas fa-magic"></i> <span>Acupuncture</span>
+                        </div>
+                        <img src="content doc/images/hero3.png" alt="Acupuncture" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80'">
+                    </div>
+
+                    <!-- 5 -->
+                    <div class="coe-card card-short">
+                        <div class="coe-card-top">
+                            <i class="fas fa-hands-helping"></i> <span>Manual Therapy</span>
+                        </div>
+                        <img src="content doc/images/hero.png" alt="Therapy" onerror="this.src='https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80'">
+                        <div class="blue-pill"></div>
+                    </div>
+
+                    <!-- 6 -->
+                    <div class="coe-card card-tall">
+                        <div class="coe-card-top">
+                            <i class="fas fa-female"></i> <span>Urogynecological</span>
+                        </div>
+                        <img src="content doc/images/pillar-caring.png" alt="Urogynecology" onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80'">
+                    </div>
+
+                    <!-- 7 -->
+                    <div class="coe-card card-medium">
+                        <div class="coe-card-top">
+                            <i class="fas fa-baby"></i> <span>Pregnancy Care</span>
+                        </div>
+                        <img src="content doc/images/hero2.png" alt="Pregnancy" onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80'">
+                    </div>
+
+                    <!-- 8 -->
+                    <div class="coe-card card-tall">
+                        <div class="coe-card-top">
+                            <i class="fas fa-stethoscope"></i> <span>Post-natal</span>
+                        </div>
+                        <img src="content doc/images/pillar-experienced.png" alt="Post-natal" onerror="this.src='https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80'">
+                        <div class="dot-pill"></div>
+                    </div>
+
+
+
                 </div>
             </div>
         </div>
     </section>
 
     <!-- OUR PHILOSOPHY (NEW LAYOUT) -->
-    <section class="section-padding philosophy-section">
-        <div class="container philosophy-grid" style="max-width: 1300px; margin: 0 auto;">
+    <section class="section-padding philosophy-section" style="position: relative; overflow: hidden;">
+        <i class="fas fa-hospital section-watermark wm-left"></i>
+        <i class="fas fa-heartbeat section-watermark wm-right" style="top: 20%; font-size: 300px;"></i>
+        <div class="container philosophy-grid" style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
             
             <!-- Left Side: Text and bullets -->
             <div class="philosophy-content">
@@ -217,9 +335,11 @@
         </div>
     </section>
 
-    <!-- OUR TEAM (NEW LAYOUT) -->
-    <section class="section-padding team-section-new">
-        <div class="container" style="max-width: 1000px; margin: 0 auto;">
+    <!-- MEET THE TEAM (NEW LAYOUT) -->
+    <section class="section-padding team-section-new" style="background: #fff; position: relative; overflow: hidden;">
+        <i class="fas fa-user-md section-watermark wm-right" style="top: 10%; font-size: 200px;"></i>
+        <i class="fas fa-pills section-watermark wm-left" style="bottom: 10%; font-size: 250px;"></i>
+        <div class="container" style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;">
             <div style="text-align: center; margin-bottom: 50px;">
                 <span style="color: #666; font-size: 14px; font-weight: 500;">Meet The Team</span>
                 <h2 class="section-title dark" style="font-size: 38px; margin-top: 10px; margin-bottom: 20px;">Meet Our Experts @Astra Health</h2>
@@ -314,5 +434,6 @@
         </div>
     </footer>
 
+    <script src="main.js"></script>
 </body>
 </html>

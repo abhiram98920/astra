@@ -31,10 +31,62 @@
             <nav class="main-nav-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
-                <a href="team.html" class="nav-link">Doctors <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
-                <a href="services.html" class="nav-link">Departments <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
+                
+                <!-- Services Mega Menu -->
+                <div class="nav-item-mega">
+                    <a href="services.html" class="nav-link">Services <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-srv-grid">
+                            <a href="services.html" class="mega-srv-item">
+                                <img src="content doc/images/hero2.png" alt="MSK">
+                                <span>MSK Assessment</span>
+                            </a>
+                            <a href="services.html" class="mega-srv-item">
+                                <img src="content doc/images/pillar-experienced.png" alt="Joint">
+                                <span>Joint Injections</span>
+                            </a>
+                            <a href="services.html" class="mega-srv-item">
+                                <img src="content doc/images/service_shockwave_1778168510104.png" alt="Shockwave">
+                                <span>Shockwave Therapy</span>
+                            </a>
+                            <a href="services.html" class="mega-srv-item">
+                                <img src="content doc/images/service_acupuncture.png" alt="Acupuncture">
+                                <span>Acupuncture</span>
+                            </a>
+                            <a href="services.html" class="mega-srv-item">
+                                <img src="content doc/images/service_manual_therapy.png" alt="Manual">
+                                <span>Manual Therapy</span>
+                            </a>
+                            <a href="services.html" class="mega-srv-item">
+                                <img src="content doc/images/pillar-caring.png" alt="Urogynecology">
+                                <span>Urogynecology</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doctors Mega Menu -->
+                <div class="nav-item-mega">
+                    <a href="team.html" class="nav-link">Doctors <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
+                    <div class="mega-menu">
+                        <div class="mega-doc-card">
+                            <img src="content doc/images/team-sumin.avif" alt="Sumin Moses">
+                            <h4>Sumin Moses</h4>
+                            <p>Specialist MSK Physio</p>
+                        </div>
+                        <div class="mega-doc-card">
+                            <img src="content doc/images/team-ruth.avif" onerror="this.src='content doc/images/pillar-friendly.png'" alt="Ruth Jayakaran">
+                            <h4>Ruth Jayakaran</h4>
+                            <p>Director & Senior Physio</p>
+                        </div>
+                        <div style="display: flex; align-items: center; justify-content: center; padding: 0 20px;">
+                            <a href="team.html" class="btn-appointment" style="background: var(--primary);"><i class="fas fa-user-md"></i> View All Doctors</a>
+                        </div>
+                    </div>
+                </div>
+
                 <a href="contact.html" class="nav-link">Contact</a>
-                <a href="contact.html" class="btn-appointment">Book Appointment</a>
+                <a href="contact.html" class="btn-appointment"><i class="fas fa-calendar-plus"></i> Book Appointment</a>
             </nav>
         </div>
     </header>
@@ -167,5 +219,6 @@
             <p>&copy; 2024 Astra Health. All rights reserved.</p>
         </div>
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>

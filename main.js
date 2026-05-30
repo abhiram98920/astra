@@ -46,19 +46,20 @@ const heroSlides = [
     { title: "Women's Health<br>&amp; Wellbeing.", desc: "Expert women's health treatments and pelvic health clinical strategy tailored for you." }
 ];
 let hIdx = 0;
-const heroEl    = document.querySelector('.hero');
+const heroImg   = document.querySelector('.hero-bg img');
 const heroTitle = document.getElementById('heroTitle');
 const heroDesc  = document.getElementById('heroDesc');
+const heroPage  = document.querySelector('.hero-pagination');
 
 function changeHeroSlide(dir) {
     hIdx = (hIdx + dir + heroBgs.length) % heroBgs.length;
     applyHeroSlide();
 }
 function applyHeroSlide() {
-    if (!heroEl) return;
-    heroEl.style.backgroundImage = `url('${heroBgs[hIdx]}')`;
+    if (heroImg) heroImg.src = heroBgs[hIdx];
     if (heroTitle) heroTitle.innerHTML = heroSlides[hIdx].title;
     if (heroDesc)  heroDesc.textContent = heroSlides[hIdx].desc.replace(/&amp;/g,'&');
+    if (heroPage)  heroPage.innerHTML = `0${hIdx + 1}<span>/0${heroBgs.length}</span>`;
 }
 // Auto-cycle every 5s
 setInterval(() => changeHeroSlide(1), 5000);
@@ -116,3 +117,30 @@ window.switchDed = function(tabEl, idx) {
     }, 220);
     sc.style.transition = 'opacity 0.22s ease';
 };
+
+/* ---- STICKY GLASSMORPHIC HEADER ---- */
+const header = document.querySelector('.main-header') || document.querySelector('.header');
+let lastScrollTop = 0;
+
+window.addEventListener('scroll', () => {
+    if (!header) return;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Add glassmorphism when scrolled down
+    if (scrollTop > 50) {
+        header.classList.add('header-scrolled');
+    } else {
+        header.classList.remove('header-scrolled');
+    }
+
+    // Hide/show logic
+    if (scrollTop > lastScrollTop && scrollTop > 150) {
+        // Scrolling down
+        header.classList.add('header-hidden');
+    } else {
+        // Scrolling up
+        header.classList.remove('header-hidden');
+    }
+    
+    lastScrollTop = scrollTop;
+});
