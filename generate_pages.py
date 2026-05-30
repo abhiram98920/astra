@@ -10,27 +10,29 @@ header = """<!DOCTYPE html>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- HEADER -->
-    <header class="header">
-        <div class="header-left">
-            <a href="index.html" class="logo">
-                <img src="content doc/images/logo.avif" alt="Astra Health Logo">
-            </a>
-        </div>
-        
-        <div class="header-right">
-            <div class="top-contacts">
-                <a href="tel:01233631555"><i class="fas fa-phone"></i> 01233 631 555</a>
-                <a href="mailto:admin@astrahealth.uk"><i class="fas fa-envelope"></i> admin@astrahealth.uk</a>
-                <span style="display: flex; align-items: center; gap: 5px;"><i class="fas fa-shield-alt" style="color: #A9DDFB;"></i> Trusted Partner</span>
-                <div class="lang-switch">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" alt="EN" style="width: 20px; border-radius: 2px;">
-                    <span>EN</span>
-                    <span style="color: rgba(255,255,255,0.5);">AR</span>
-                </div>
+    <!-- TRANSPARENT MAIN HEADER -->
+        <header class="main-header">
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="content doc/images/logo.avif" alt="Astra Health">
+                </a>
             </div>
             
-            <nav class="main-nav-links">
+            <div class="header-right">
+                <!-- TOP CONTACTS -->
+                <div class="top-contacts">
+                    <a href="tel:01233631555"><i class="fas fa-phone-alt" style="color: #A9DDFB;"></i> 01233 631 555</a>
+                    <a href="mailto:admin@astrahealth.uk"><i class="fas fa-envelope" style="color: #A9DDFB;"></i> admin@astrahealth.uk</a>
+                    <span style="display: flex; align-items: center; gap: 5px;"><i class="fas fa-shield-alt" style="color: #A9DDFB;"></i> Trusted Partner</span>
+                    <div class="lang-switch">
+                        <img src="https://flagcdn.com/w20/gb.png" alt="English">
+                        <span style="font-weight: 500;">EN</span>
+                        <span style="opacity: 0.6;">AR</span>
+                    </div>
+                </div>
+
+                <!-- MAIN NAV -->
+                <nav class="main-nav-links">
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="about.html" class="nav-link">About</a>
                 
@@ -90,8 +92,8 @@ header = """<!DOCTYPE html>
                 <a href="contact.html" class="nav-link">Contact</a>
                 <a href="contact.html" class="btn-appointment"><i class="fas fa-calendar-plus"></i> Book Appointment</a>
             </nav>
-        </div>
-    </header>
+            </div>
+        </header>
 
     <!-- INNER PAGE HERO -->
     <section class="hero-section" style="height: 400px; padding-top: 150px; text-align: center; justify-content: center; background: linear-gradient(rgba(18,43,75,0.8), rgba(18,43,75,0.8)), url('content doc/images/hero2.png') center/cover;">
@@ -104,45 +106,42 @@ header = """<!DOCTYPE html>
 
 footer = """
     <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container footer-grid" style="max-width: 1200px; margin: 0 auto;">
-            <div class="footer-col">
-                <img src="content doc/images/logo.avif" alt="Astra Health Logo" class="footer-logo">
-                <p>Providing world-class medical care and highly specialized physiotherapy services in the heart of Kent.</p>
-                <div class="social-links" style="display: flex; gap: 15px; margin-top: 20px;">
-                    <a href="#" style="color: #fff; font-size: 20px;"><i class="fab fa-facebook"></i></a>
-                    <a href="#" style="color: #fff; font-size: 20px;"><i class="fab fa-twitter"></i></a>
-                    <a href="#" style="color: #fff; font-size: 20px;"><i class="fab fa-instagram"></i></a>
-                </div>
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="ft-logo">
+                <img src="content doc/images/logo.avif" alt="Logo">
+                <p style="font-family: 'Libre Franklin'; font-size: 14px; opacity: 0.8; line-height: 1.6;">
+                    Defining the gold standard in physical healthcare and patient-centric clinical excellence in Ashford, Kent.
+                </p>
             </div>
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="team.html">Our Team</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h3>Contact Us</h3>
-                <ul class="footer-links">
-                    <li><i class="fas fa-map-marker-alt"></i> 11 Repton Avenue, Ashford, Kent</li>
-                    <li><i class="fas fa-phone"></i> 01233 631 555</li>
-                    <li><i class="fas fa-envelope"></i> admin@astrahealth.uk</li>
+            <div class="footer-links">
+                <h4>Clinic Hours</h4>
+                <ul>
+                    <li style="color: rgba(255,255,255,0.8);">Mon — Fri: 08:00 - 20:00</li>
+                    <li style="color: rgba(255,255,255,0.8);">Sat: 09:00 - 14:00</li>
+                    <li style="color: rgba(255,255,255,0.8);">Sun: Closed</li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h3>Clinic Hours</h3>
-                <ul class="footer-links">
-                    <li>Monday - Friday: 8:00 AM - 8:00 PM</li>
-                    <li>Saturday: 9:00 AM - 5:00 PM</li>
-                    <li>Sunday: Closed</li>
+            <div class="footer-links">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 11 Repton Avenue, Ashford, Kent</li>
+                    <li><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> 01233 631 555</li>
+                    <li><i class="fas fa-envelope" style="margin-right: 10px;"></i> admin@astrahealth.uk</li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom" style="text-align: center; padding-top: 30px; margin-top: 50px; border-top: 1px solid rgba(255,255,255,0.1);">
-            <p>&copy; 2024 Astra Health. All rights reserved.</p>
+        <div class="footer-copy">
+            &copy; 2026 Astra Health. Designed By Bten.in
         </div>
     </footer>
     <script src="main.js"></script>
